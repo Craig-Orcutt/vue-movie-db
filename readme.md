@@ -1,0 +1,1 @@
+A simple movie database to practice with VueJS using Scott Tolinski's LevelUpTuts tutorial on Vue basics
