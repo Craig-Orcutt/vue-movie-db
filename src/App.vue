@@ -1,7 +1,9 @@
 <template>
   <div id="app" >
     <Header :title='title'      />
-    <router-view />
+
+      <router-view />
+
   </div>
 
 </template>
@@ -22,7 +24,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,4 +32,6 @@ export default {
   text-align: center;
   color: white;
 }
+
+
 </style>
