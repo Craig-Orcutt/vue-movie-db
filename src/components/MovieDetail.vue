@@ -1,12 +1,15 @@
 <template>
-  <div class="movie-wrapper" :style="styles">
+  <transition name='fade'>
+      <div class="movie-wrapper" :style="styles">
     <div class="movie-info">
     <h1>{{movie.title}}</h1>
     <h3>Release Date: {{movie.release_date}}</h3>
     <p>{{movie.overview}}</p>
     </div>
 
-  </div>
+    </div>
+  </transition>
+
 </template>
 
 <script>
@@ -34,7 +37,7 @@ export default {
         const movie = await res.json();
         this.movie = movie;
       } catch (e) {
-        console.log("error", e);
+        return e;
       }
     }
   },
@@ -56,9 +59,21 @@ export default {
   padding-top: 50vh;
   background-size: cover;
 }
-.movie-info{
+.movie-info {
   background: white;
   color: #222;
   padding: 2rem 10%;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+
 </style>
